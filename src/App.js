@@ -1,9 +1,9 @@
 import React from "react";
 
-import TicTacToe from "./TicTacToe.jsx";
+import Game from "./Game";
 
 const App = () => {
-  return <TicTacToe />;
+  return <Game />;
 };
 
 export default App;

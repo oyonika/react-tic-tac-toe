@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import Square from "./Square";
 
-const TicTacToe = () => {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+const TicTacToe = ({ xIsNext, squares, onPlay }) => {
+  //   const [xIsNext, setXIsNext] = useState(true);
+  //   const [squares, setSquares] = useState(Array(9).fill(null));
 
   const calculateWinner = () => {
     const lines = [
@@ -40,8 +40,9 @@ const TicTacToe = () => {
     } else {
       nextSquares[i] = "O";
     }
-    setXIsNext(!xIsNext);
-    setSquares(nextSquares);
+    // setXIsNext(!xIsNext);
+    // setSquares(nextSquares);
+    onPlay(nextSquares);
   };
 
   const winner = calculateWinner(squares);
